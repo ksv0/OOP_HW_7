@@ -1,7 +1,7 @@
-package ksv.fe.core.models;
+package core.models;
 
 
-import ksv.fe.core.mvp.view.View;
+import core.mvp.view.View;
 
 public class Logger implements LoggerInterface{
     private String log = "";

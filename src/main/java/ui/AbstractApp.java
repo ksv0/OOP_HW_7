@@ -1,4 +1,4 @@
-package ksv.fe.ui;
+package ui;
 /**
  * S - соответствует
  * O - соответствует
@@ -6,7 +6,7 @@ package ksv.fe.ui;
  * I - не интерфейс
  * D - класс абстрактный
  */
-import ksv.fe.core.mvp.view.View;
+import core.mvp.view.View;
 
 public abstract class AbstractApp {
     protected View view;

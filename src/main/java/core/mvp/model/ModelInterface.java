@@ -1,4 +1,4 @@
-package ksv.fe.core.mvp.model;
+package core.mvp.model;
 /**
  * S - не класс
  * O - не класс
@@ -6,12 +6,9 @@ package ksv.fe.core.mvp.model;
  * I - разделение не требуется
  * D - завязан на абстрактном комплексном числе
  */
-import ksv.fe.core.models.AbstractComplexNumber;
-import ksv.fe.core.models.ComplexNumber;
+import core.models.AbstractComplexNumber;
 
-/**
- *
- */
+
 public interface ModelInterface {
 
     void setCurrentNumbers(AbstractComplexNumber first, AbstractComplexNumber second);
@@ -20,6 +17,9 @@ public interface ModelInterface {
     AbstractComplexNumber getFirst();
 
     AbstractComplexNumber getSecond();
+    void setCurrentNumbers();
+
+    AbstractComplexNumber createComplexNumber(String message);
 
     String toString(char c,boolean flag);
 

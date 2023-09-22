@@ -1,4 +1,4 @@
-package ksv.fe.ui;
+package ui;
 /**
  * S - соответствует
  * O - соответствует
@@ -7,14 +7,12 @@ package ksv.fe.ui;
  * D - соответствует
  */
 
-import ksv.fe.core.models.AbstractComplexNumber;
-import ksv.fe.core.models.ComplexNumber;
-import ksv.fe.core.models.Logger;
-import ksv.fe.core.models.LoggerInterface;
-import ksv.fe.core.mvp.presenter.Presenter;
-import ksv.fe.core.mvp.presenter.PresenterInterface;
-import ksv.fe.core.mvp.view.ConsoleView;
-import ksv.fe.core.mvp.view.View;
+import core.models.AbstractComplexNumber;
+import core.models.Logger;
+import core.models.LoggerInterface;
+import core.mvp.presenter.Presenter;
+import core.mvp.presenter.PresenterInterface;
+import core.mvp.view.ConsoleView;
 
 import java.util.Scanner;
 
@@ -25,7 +23,7 @@ public class App extends AbstractApp {
             view = new ConsoleView(in);
             PresenterInterface presenter = new Presenter(view);
             LoggerInterface logger = new Logger(view);
-            presenter.newNumbers();
+            presenter.getModel().setCurrentNumbers();
             logger.appendLog(presenter.getModel().toString());
             while (runnable) {
                 view.set(" ");
@@ -90,7 +88,7 @@ public class App extends AbstractApp {
                         logger.appendLog("Запрошены логи");
                     }
                     case 8 -> {
-                        presenter.newNumbers();
+                        presenter.getModel().setCurrentNumbers();
                         logger.appendLog(presenter.getModel().toString());
                     }
                     case 0 -> {

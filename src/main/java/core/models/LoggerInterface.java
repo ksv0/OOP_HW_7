@@ -1,4 +1,4 @@
-package ksv.fe.core.models;
+package core.models;
 
 public interface LoggerInterface {
     void appendLog(String logMessage);

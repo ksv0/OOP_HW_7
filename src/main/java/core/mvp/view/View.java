@@ -1,4 +1,4 @@
-package ksv.fe.core.mvp.view;
+package core.mvp.view;
 /**
  * S - не класс
  * O - соответствует

@@ -1,17 +1,17 @@
-package ksv.fe.core.mvp.presenter;
+package core.mvp.presenter;
 /**
- * S - соответствует со скрипом, newNumbers() и createComplexNumber(String message) можно переместить в модель
+ * S - соответствует
  * O - соответствует
  * L - соответствует
  * I - не интерфейс
  * D - реализует интерфейс, создать через интерфейс возможно
  */
 
-import ksv.fe.core.models.AbstractComplexNumber;
-import ksv.fe.core.models.ComplexNumber;
-import ksv.fe.core.mvp.model.Model;
-import ksv.fe.core.mvp.model.ModelInterface;
-import ksv.fe.core.mvp.view.View;
+import core.models.AbstractComplexNumber;
+import core.models.ComplexNumber;
+import core.mvp.model.Model;
+import core.mvp.model.ModelInterface;
+import core.mvp.view.View;
 
 import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class Presenter implements PresenterInterface {
     private Scanner in;
 
     public Presenter(View view) {
-        this.model = new Model();
+        this.model = new Model(view);
         this.view = view;
     }
 
@@ -80,20 +80,7 @@ public class Presenter implements PresenterInterface {
         return res;
     }
 
-    @Override
-    public void newNumbers() {
-        model.setCurrentNumbers(createComplexNumber("первого"), createComplexNumber("второго"));
-    }
 
-    @Override
-    public AbstractComplexNumber createComplexNumber(String message) {
-        Double real, imaginary;
-        System.out.printf("Введите действительную часть %s числа: ", message);
-        real = view.getDouble();
-        System.out.printf("Введите мнимую часть %s числа: ", message);
-        imaginary = view.getDouble();
-        return new ComplexNumber(real, imaginary);
-    }
 
     public ModelInterface getModel() {
         return model;

@@ -1,4 +1,4 @@
-package ksv.fe.core.mvp.model;
+package core.mvp.model;
 /**
  * S - класс работает только с массивом комплексных чисел и не делает ничего более
  * O - соответствует
@@ -7,14 +7,17 @@ package ksv.fe.core.mvp.model;
  * D - завязан на абстрактном комплексном числе
  */
 
-import ksv.fe.core.models.AbstractComplexNumber;
-import ksv.fe.core.models.ComplexNumber;
+import core.models.AbstractComplexNumber;
+import core.models.ComplexNumber;
+import core.mvp.view.View;
 
 public class Model implements ModelInterface {
     private AbstractComplexNumber[] currentNumbers;
+    private View view;
 
-    public Model() {
+    public Model(View view) {
         currentNumbers = new ComplexNumber[2];
+        this.view = view;
     }
 
     @Override
@@ -73,7 +76,20 @@ public class Model implements ModelInterface {
                 currentNumbers[1].getRealPart(),
                 currentNumbers[1].getImaginaryPart());
     }
+    @Override
+    public void setCurrentNumbers() {
+        setCurrentNumbers(createComplexNumber("первого"), createComplexNumber("второго"));
+    }
 
+    @Override
+    public AbstractComplexNumber createComplexNumber(String message) {
+        Double real, imaginary;
+        System.out.printf("Введите действительную часть %s числа: ", message);
+        real = view.getDouble();
+        System.out.printf("Введите мнимую часть %s числа: ", message);
+        imaginary = view.getDouble();
+        return new ComplexNumber(real, imaginary);
+    }
     public AbstractComplexNumber[] getCurrentNumbers() {
         return currentNumbers;
     }

@@ -1,4 +1,4 @@
-package ksv.fe.core.mvp.view;
+package core.mvp.view;
 /**
  * S - соответствует
  * O - соответствует
@@ -6,8 +6,6 @@ package ksv.fe.core.mvp.view;
  * I - не интерфейс
  * D - реализует интерфейс, создать через интерфейс возможно
  */
-
-import ksv.fe.core.models.LoggerInterface;
 
 import java.util.Scanner;
 

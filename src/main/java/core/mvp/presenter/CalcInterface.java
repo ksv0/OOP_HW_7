@@ -1,4 +1,4 @@
-package ksv.fe.core.mvp.presenter;
+package core.mvp.presenter;
 /**
  * S - не класс
  * O - соответствует
@@ -7,7 +7,7 @@ package ksv.fe.core.mvp.presenter;
  * D - соответствует
  */
 
-import ksv.fe.core.models.AbstractComplexNumber;
+import core.models.AbstractComplexNumber;
 
 public interface CalcInterface {
 
